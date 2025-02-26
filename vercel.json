@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "buildCommand": "npx nx build:viewer",
+  "buildCommand": "npm run build",
   "outputDirectory": "platform/app/dist",
+  "installCommand": "npm install && npx lerna bootstrap",
   "routes": [
+    {
+      "src": "/config/(.*)",
+      "dest": "/config/$1"
+    },
     {
       "src": "/assets/(.*)",
       "dest": "/assets/$1"
