@@ -1,20 +1,47 @@
 {
   "version": 2,
   "buildCommand": "yarn build",
-  "outputDirectory": "dist",
+  "outputDirectory": "platform/app/dist",
   "installCommand": "yarn install",
+  "framework": "react",
+  "ignoreCommand": "if [[ \"$VERCEL_ENV\" == \"production\" ]]; then exit 1; else exit 0; fi",
+  "env": {
+    "PUBLIC_URL": "/",
+    "APP_CONFIG": "config/default.js",
+    "NODE_OPTIONS": "--max_old_space_size=4096"
+  },
   "routes": [
     {
       "src": "/config/(.*)",
       "dest": "/config/$1"
     },
     {
-      "src": "/assets/(.*)",
-      "dest": "/assets/$1"
+      "src": "/app-config.js",
+      "dest": "/app-config.js"
+    },
+    {
+      "src": "/manifest.json",
+      "dest": "/manifest.json"
+    },
+    {
+      "src": "/favicon.ico",
+      "dest": "/favicon.ico"
     },
     {
       "src": "/static/(.*)",
       "dest": "/static/$1"
+    },
+    {
+      "src": "/assets/(.*)",
+      "dest": "/assets/$1"
+    },
+    {
+      "src": "/(.*)\\.js",
+      "dest": "/$1.js"
+    },
+    {
+      "src": "/(.*)\\.css",
+      "dest": "/$1.css"
     },
     {
       "handle": "filesystem"
