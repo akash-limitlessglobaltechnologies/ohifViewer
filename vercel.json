@@ -2,7 +2,7 @@
   "version": 2,
   "buildCommand": "yarn build",
   "outputDirectory": "platform/app/dist",
-  "installCommand": "yarn install --frozen-lockfile && yarn lerna bootstrap",
+  "installCommand": "yarn add lerna@6.6.2 -W && yarn install && yarn lerna bootstrap",
   "routes": [
     {
       "src": "/config/(.*)",
