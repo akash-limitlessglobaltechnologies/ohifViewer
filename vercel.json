@@ -1,10 +1,8 @@
 {
   "version": 2,
-  "buildCommand": "yarn build",
+  "buildCommand": "cd platform/app && yarn install && yarn run build:web",
   "outputDirectory": "platform/app/dist",
-  "installCommand": "yarn install",
-  "framework": "react-router",
-  "ignoreCommand": "if [[ \"$VERCEL_ENV\" == \"production\" ]]; then exit 1; else exit 0; fi",
+  "installCommand": "echo 'Skipping root install'",
   "env": {
     "PUBLIC_URL": "/",
     "APP_CONFIG": "config/default.js",
@@ -18,6 +16,10 @@
     {
       "src": "/app-config.js",
       "dest": "/app-config.js"
+    },
+    {
+      "src": "/init-service-worker.js",
+      "dest": "/init-service-worker.js"
     },
     {
       "src": "/manifest.json",
