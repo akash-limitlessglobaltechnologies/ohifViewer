@@ -1,7 +1,7 @@
 {
   "version": 2,
   "buildCommand": "yarn build",
-  "outputDirectory": "platform/app/dist",
+  "outputDirectory": "dist",
   "installCommand": "yarn install",
   "routes": [
     {
