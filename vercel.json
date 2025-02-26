@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "buildCommand": "npm run build",
+  "buildCommand": "yarn build",
   "outputDirectory": "platform/app/dist",
-  "installCommand": "npm install && npx lerna bootstrap",
+  "installCommand": "yarn install --frozen-lockfile && yarn lerna bootstrap",
   "routes": [
     {
       "src": "/config/(.*)",
