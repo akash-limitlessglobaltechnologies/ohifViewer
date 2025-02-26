@@ -1,0 +1,30 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/node",
+      "config": {
+        "buildCommand": "npx nx build ui",
+        "outputDirectory": "dist/apps/ui"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/dist/apps/ui/$1"
+    },
+    {
+      "src": "/assets/(.*)",
+      "dest": "/dist/apps/ui/assets/$1"
+    },
+    {
+      "handle": "filesystem"
+    },
+    {
+      "src": "/.*",
+      "dest": "/dist/apps/ui/index.html"
+    }
+  ]
+}
