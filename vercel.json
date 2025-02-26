@@ -1,8 +1,7 @@
 {
   "version": 2,
-  "buildCommand": "cd platform/app && yarn install && yarn run build:web",
-  "outputDirectory": "platform/app/dist",
-  "installCommand": "echo 'Skipping root install'",
+  "buildCommand": "yarn install && yarn build",
+  "outputDirectory": "dist",
   "env": {
     "PUBLIC_URL": "/",
     "APP_CONFIG": "config/default.js",
